@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS ticker_type(
 CREATE TABLE IF NOT EXISTS ticker(
     tickerId INTEGER PRIMARY KEY,
     tickerDataTypeId INTEGER NOT NULL REFERENCES ticker_data_type (tickerDataTypeId) ON DELETE CASCADE,
-    attributeTypeId INTEGER NOT NULL REFERENCES ticker_type (tickerTypeId) ON DELETE CASCADE,
+    tickerTypeId INTEGER NOT NULL REFERENCES ticker_type (tickerTypeId) ON DELETE CASCADE,
     sourceId INTEGER NOT NULL REFERENCES source (sourceId) ON DELETE CASCADE,
     name TEXT,
     metaUI JSONB,
