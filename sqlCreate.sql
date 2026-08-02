@@ -28,3 +28,4 @@ CREATE TABLE IF NOT EXISTS ticker_data(
     value NUMERIC,
     modified TIMESTAMP DEFAULT (NOW() AT TIME ZONE 'utc')
 );
+ALTER TABLE public.ticker ADD CONSTRAINT ticker_unique UNIQUE (modified, tickerdatatypeid, tickerid, sourceid)
